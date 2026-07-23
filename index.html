@@ -70,6 +70,13 @@ h2.section-title {
   padding: 1.3rem clamp(1.2rem, 4vw, 3rem);
   max-width: 1180px;
   margin: 0 auto;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(250,250,250,0.88);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
 }
 .nav-brand {
   display: flex;
@@ -102,8 +109,23 @@ h2.section-title {
   white-space: nowrap;
 }
 .nav-cta:hover { background: var(--night-deep); }
+.nav-pin {
+  color: var(--ink) !important;
+  font-weight: 800;
+  position: relative;
+}
+.nav-pin::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: -4px;
+  height: 2px;
+  background: var(--purple);
+  border-radius: 2px;
+}
 @media (max-width: 640px) {
-  .nav-links a:not(.nav-cta) { display: none; }
+  .nav-links a:not(.nav-cta):not(.nav-pin) { display: none; }
+  .nav-links { gap: 0.8rem; }
+  .nav-pin { font-size: 0.85rem; white-space: nowrap; }
 }
 
 /* ---------- layout ---------- */
@@ -352,6 +374,7 @@ footer .copyright { font-size: 12.5px; color: #6f93a3; }
   </a>
   <div class="nav-links">
     <a href="index.html#how-it-works">How it works</a>
+    <a class="nav-pin" href="coming-soon.html">What's New</a>
     <a href="support.html">Support</a>
     <a href="privacy.html">Privacy</a>
     <a class="nav-cta" href="https://apps.apple.com/sa/app/liyoplanet-our-shared-world/id6761609759">Get the App</a>
@@ -451,6 +474,7 @@ footer .copyright { font-size: 12.5px; color: #6f93a3; }
     </div>
     <div class="foot-links">
       <a href="index.html">LiyoPlanet</a>
+      <a href="coming-soon.html">What's New</a>
       <a href="terms.html">Terms of Use</a>
       <a href="privacy.html">Privacy Policy</a>
       <a href="support.html">Support</a>
